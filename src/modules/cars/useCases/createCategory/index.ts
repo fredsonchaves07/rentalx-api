@@ -2,7 +2,7 @@ import { CategoriesRepository } from "../../repositories/implementation/Categori
 import { CreateCategoryController } from "./CreateCategoryController";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
-export default():CreateCategoryController => {
+export default(): CreateCategoryController => {
     const categoriesRepository = new CategoriesRepository()
 
     const createCategoryUseCase = new CreateCategoryUseCase(categoriesRepository)
