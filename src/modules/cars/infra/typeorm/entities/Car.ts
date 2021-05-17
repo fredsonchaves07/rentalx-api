@@ -1,4 +1,4 @@
-import { Category } from '@modules/cars/infra/typeorm/entities/Category'
+import { Category } from '../entities/Category'
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm'
 import { v4 as uuid } from 'uuid'
 
