@@ -1,3 +1,4 @@
+import { ensureAdmin } from '@shared/infra/http/middlewares/ensureAdmin'
 import { CreateSpecificationController } from '@modules/cars/useCases/createSpecification/CreateSpecificationController'
 import { ListSpecificationController } from '@modules/cars/useCases/listSpecification/ListSpecificationController'
 import { Router } from 'express'
@@ -9,8 +10,13 @@ const specificationsRoutes = Router()
 const createSpecificationController = new CreateSpecificationController()
 const listSpecificationController = new ListSpecificationController()
 
-specificationsRoutes.use(ensureAuthenticated)
-specificationsRoutes.post('/', createSpecificationController.handle)
+
+specificationsRoutes.post(
+    '/', 
+    ensureAuthenticated,
+    ensureAdmin,
+    createSpecificationController.handle
+)
 
 specificationsRoutes.get('/', listSpecificationController.handle)
 

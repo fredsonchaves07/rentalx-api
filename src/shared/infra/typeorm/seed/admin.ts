@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid'
-import { hash } from 'bcrypt'
+import { hash } from 'bcryptjs'
 import  createConnection  from '../index'
 
 async function create(){
