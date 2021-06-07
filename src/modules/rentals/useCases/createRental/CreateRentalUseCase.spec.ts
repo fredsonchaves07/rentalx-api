@@ -9,7 +9,7 @@ let rentalRepositoryInMemory: RentalsRepositoryInMemory
 let dayJsDateProvider: DayJsDateProvider
 
 describe('Create Rental', () => {
-    const dayAdd24Hours = dayjs().add(1, 'day').toDate()
+    const dayAdd24Hours = dayjs().add(2, 'day').toDate()
 
     beforeEach(() => {
         rentalRepositoryInMemory = new RentalsRepositoryInMemory()
